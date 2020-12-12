@@ -20,7 +20,7 @@ var currentHour24 = moment().format('HH');
 console.log("The current hour in 24hr time is: " + currentHour24);
 
 function testTest() {
-    if (currentHour24 == 14){console.log("true")};
+    if (currentHour24 == 17){console.log("true")};
 };
 
 testTest();
@@ -34,7 +34,7 @@ function blockColor(){
     console.log("this function is working");
     
     // If it's before 9am, all time blocks in the future
-    if (currentHour24 > 0 && currentHour24 < 9) {
+    if (currentHour24 < 9) {
         console.log("it's currently before 9am");
 
     // Else if statements for 8 hours of workday
@@ -109,11 +109,13 @@ function blockColor(){
         $("#4pm").removeClass("future").addClass("past");
         $("#5pm").removeClass("future").addClass("present");
     }
-    // All blocks past if after 5pm
-    else if (currentHour24 > 17 && currentHour24 < 24) {
+    // All blocks past if after 6pm
+    else if (currentHour24 > 17) {
         console.log("it's currently after 5pm");
         $(".time-block").removeClass("future");
         $(".time-block").addClass("past");
     }
-    // $("#15").toggleClass("present");
-};
+  };
+
+  // Event listeners for save buttons
+  
