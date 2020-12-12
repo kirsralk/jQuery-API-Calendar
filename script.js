@@ -14,10 +14,9 @@ $(window).on("load", showDate());
 //Time block functionality
 
     //Retrieve current hour from moment.js
-var currentHour = moment().format('hA');
 var currentHour24 = moment().format('HH');
+// var currentHour24 = 0;
 
-console.log("The current hour is: " + currentHour);
 console.log("The current hour in 24hr time is: " + currentHour24);
 
 function testTest() {
@@ -35,56 +34,86 @@ function blockColor(){
     console.log("this function is working");
     
     // If it's before 9am, all time blocks in the future
-    if (currentHour24 < 9) {
+    if (currentHour24 > 0 && currentHour24 < 9) {
         console.log("it's currently before 9am");
-        $(".time-block").removeClass("past");
-        $(".time-block").addClass("future");
 
     // Else if statements for 8 hours of workday
     } else if (currentHour24 == 9) {
-        $("#9am").removeClass("past");
-        $("#9am").addClass("present");
+        $("#9am").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 10) {
-        $("#10am").removeClass("past");
-        $("#10am").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 11) {
-        $("#11am").removeClass("past");
-        $("#11am").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 12) {
-        $("#12pm").removeClass("past");
-        $("#12pm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 13) {
-        $("#1pm").removeClass("past");
-        $("#1pm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("past");
+        $("#1pm").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 14) {
-        $("#2pm").removeClass("past");
-        $("#2pm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("past");
+        $("#1pm").removeClass("future").addClass("past");
+        $("#2pm").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 15) {
-        $("#3pm").removeClass("past");
-        $("#3pm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("past");
+        $("#1pm").removeClass("future").addClass("past");
+        $("#2pm").removeClass("future").addClass("past");
+        $("#3pm").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 16) {
-        $("#4pm").removeClass("past");
-        $("#4pm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("past");
+        $("#1pm").removeClass("future").addClass("past");
+        $("#2pm").removeClass("future").addClass("past");
+        $("#3pm").removeClass("future").addClass("past");
+        $("#4pm").removeClass("future").addClass("present");
     }
 
     else if (currentHour24 == 17) {
-        $("#5pm").removeClass("past");
-        $("#5pmm").addClass("present");
+        $("#9am").removeClass("future").addClass("past");
+        $("#10am").removeClass("future").addClass("past");
+        $("#11am").removeClass("future").addClass("past");
+        $("#12pm").removeClass("future").addClass("past");
+        $("#1pm").removeClass("future").addClass("past");
+        $("#2pm").removeClass("future").addClass("past");
+        $("#3pm").removeClass("future").addClass("past");
+        $("#4pm").removeClass("future").addClass("past");
+        $("#5pm").removeClass("future").addClass("present");
     }
-
+    // All blocks past if after 5pm
+    else if (currentHour24 > 17 && currentHour24 < 24) {
+        console.log("it's currently after 5pm");
+        $(".time-block").removeClass("future");
+        $(".time-block").addClass("past");
+    }
     // $("#15").toggleClass("present");
 };
