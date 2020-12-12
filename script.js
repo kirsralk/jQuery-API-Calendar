@@ -10,7 +10,7 @@ function showDate() {
 };
 
 $(window).on("load", showDate());
-
+// $(window).on("load", blockColor());
 //Time block functionality
 
     //Retrieve current hour from moment.js
@@ -25,7 +25,16 @@ function testTest() {
 };
 
 testTest();
+blockColor();
 
 //for time blocks, if id=current hour, change class to present
 //if id = past hour, change class to past
 //if id = future hour, change class to future
+var timeValue = document.getElementById("15").getAttribute("data-value");
+
+function blockColor(){
+    console.log("this function is working");
+    
+    console.log(timeValue);
+    $("#15").toggleClass("present");
+};
