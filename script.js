@@ -30,11 +30,61 @@ blockColor();
 //for time blocks, if id=current hour, change class to present
 //if id = past hour, change class to past
 //if id = future hour, change class to future
-var timeValue = document.getElementById("15").getAttribute("data-value");
 
 function blockColor(){
     console.log("this function is working");
     
-    console.log(timeValue);
-    $("#15").toggleClass("present");
+    // If it's before 9am, all time blocks in the future
+    if (currentHour24 < 9) {
+        console.log("it's currently before 9am");
+        $(".time-block").removeClass("past");
+        $(".time-block").addClass("future");
+
+    // Else if statements for 8 hours of workday
+    } else if (currentHour24 == 9) {
+        $("#9am").removeClass("past");
+        $("#9am").addClass("present");
+    }
+
+    else if (currentHour24 == 10) {
+        $("#10am").removeClass("past");
+        $("#10am").addClass("present");
+    }
+
+    else if (currentHour24 == 11) {
+        $("#11am").removeClass("past");
+        $("#11am").addClass("present");
+    }
+
+    else if (currentHour24 == 12) {
+        $("#12pm").removeClass("past");
+        $("#12pm").addClass("present");
+    }
+
+    else if (currentHour24 == 13) {
+        $("#1pm").removeClass("past");
+        $("#1pm").addClass("present");
+    }
+
+    else if (currentHour24 == 14) {
+        $("#2pm").removeClass("past");
+        $("#2pm").addClass("present");
+    }
+
+    else if (currentHour24 == 15) {
+        $("#3pm").removeClass("past");
+        $("#3pm").addClass("present");
+    }
+
+    else if (currentHour24 == 16) {
+        $("#4pm").removeClass("past");
+        $("#4pm").addClass("present");
+    }
+
+    else if (currentHour24 == 17) {
+        $("#5pm").removeClass("past");
+        $("#5pmm").addClass("present");
+    }
+
+    // $("#15").toggleClass("present");
 };
