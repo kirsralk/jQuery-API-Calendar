@@ -117,15 +117,98 @@ function blockColor(){
     }
   };
 
-  // Event listeners for save buttons to store inputs
+  // Event listeners for save buttons to store inputs:
+
+  // Variables to save input text and corresponding button clicks
   var saveBtn9 = $("#btn9");
+  var saveBtn10 = $("#btn10");
+  var saveBtn11 = $("#btn11");
+  var saveBtn12 = $("#btn12");
+  var saveBtn13 = $("#btn13");
+  var saveBtn14 = $("#btn14");
+  var saveBtn15 = $("#btn15");
+  var saveBtn16= $("#btn16");
+  var saveBtn17 = $("#btn17");
+
   var userInput9 = $("#9AMinput");
-  
+  var userInput10 = $("#10AMinput");
+  var userInput11 = $("#11AMinput");
+  var userInput12 = $("#12PMinput");
+  var userInput13 = $("#1PMinput");
+  var userInput14 = $("#2PMinput");
+  var userInput15 = $("#3PMinput");
+  var userInput16 = $("#4PMinput");
+  var userInput17 = $("#5PMinput");
+
+// Button events saving to local storage  
 $(saveBtn9).on("click", function (e){
     e.preventDefault();
-    // alert("this button works");
     var userInput9 = $("#9AMinput").val().trim();
     localStorage.setItem("9amHour",(userInput9));
 });
     var savedInput1 = (localStorage.getItem("9amHour"));
     userInput9.val(savedInput1);
+
+$(saveBtn10).on("click", function (e){
+    e.preventDefault();
+    var userInput10 = $("#10AMinput").val().trim();
+    localStorage.setItem("10amHour",(userInput10));
+});
+    var savedInput2 = (localStorage.getItem("10amHour"));
+    userInput10.val(savedInput2);
+
+$(saveBtn11).on("click", function (e){
+    e.preventDefault();
+    var userInput11 = $("#11AMinput").val().trim();
+    localStorage.setItem("11amHour",(userInput11));
+});
+    var savedInput3 = (localStorage.getItem("11amHour"));
+    userInput11.val(savedInput3);
+
+$(saveBtn12).on("click", function (e){
+    e.preventDefault();
+    var userInput12 = $("#12PMinput").val().trim();
+    localStorage.setItem("12pmHour",(userInput12));
+});
+    var savedInput4 = (localStorage.getItem("12pmHour"));
+    userInput12.val(savedInput4);    
+
+$(saveBtn13).on("click", function (e){
+    e.preventDefault();
+    var userInput13 = $("#1PMinput").val().trim();
+    localStorage.setItem("1pmHour",(userInput13));
+});
+    var savedInput5 = (localStorage.getItem("1pmHour"));
+    userInput13.val(savedInput5);  
+
+$(saveBtn14).on("click", function (e){
+    e.preventDefault();
+    var userInput14 = $("#2PMinput").val().trim();
+    localStorage.setItem("2pmHour",(userInput14));
+});
+    var savedInput6 = (localStorage.getItem("2pmHour"));
+    userInput14.val(savedInput6);  
+
+$(saveBtn15).on("click", function (e){
+    e.preventDefault();
+    var userInput15 = $("#3PMinput").val().trim();
+    localStorage.setItem("3pmHour",(userInput15));
+});
+    var savedInput7 = (localStorage.getItem("3pmHour"));
+    userInput15.val(savedInput7);  
+
+$(saveBtn16).on("click", function (e){
+    e.preventDefault();
+    var userInput16 = $("#4PMinput").val().trim();
+    localStorage.setItem("4pmHour",(userInput16));
+});
+    var savedInput8 = (localStorage.getItem("4pmHour"));
+    userInput16.val(savedInput8);  
+
+$(saveBtn17).on("click", function (e){
+    e.preventDefault();
+    var userInput17 = $("#5PMinput").val().trim();
+    localStorage.setItem("5pmHour",(userInput17));
+});
+    var savedInput9 = (localStorage.getItem("5pmHour"));
+    userInput17.val(savedInput9);  
