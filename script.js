@@ -117,5 +117,15 @@ function blockColor(){
     }
   };
 
-  // Event listeners for save buttons
+  // Event listeners for save buttons to store inputs
+  var saveBtn9 = $("#btn9");
+  var userInput9 = $("#9AMinput");
   
+$(saveBtn9).on("click", function (e){
+    e.preventDefault();
+    // alert("this button works");
+    var userInput9 = $("#9AMinput").val().trim();
+    localStorage.setItem("9amHour",(userInput9));
+});
+    var savedInput1 = (localStorage.getItem("9amHour"));
+    userInput9.val(savedInput1);
